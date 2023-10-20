@@ -19,3 +19,22 @@
     }
 ```
 * reference: https://github.com/kubernetes-sigs/metrics-server/issues/1024#issuecomment-1129914389
+## EKS ALB S3 Logs Access Denied for bucket: Please check S3bucket permission
+* EKS ALB S3 logs access Denied error when enable 
+* Solution: We need to make sure S3 bucket policy has `AWS ELB ACCOUNT ID` which is `127311923021` for `us-east-1`
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "s3_write_alb_logs",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::127311923021:root"
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::S3BucketName/*"
+        }
+    ]
+}
+```
