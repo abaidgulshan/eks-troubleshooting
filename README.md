@@ -58,7 +58,7 @@
     ]
 }
 ```
-
+![Screenshot (6)](https://github.com/abaidgulshan/eks-troubleshooting/assets/7329596/5f1ae82e-9ecf-43ca-896b-e66d7ee49eed)
 ## EKS Remove bulk jobs in namespace
 * EKS ALB S3 logs access Denied error when enable 
 * Solution: `kubectl delete jobs -n monitoring "kubectl get jobs -n monitoring -o custom-columns=:.metadata.name" `
