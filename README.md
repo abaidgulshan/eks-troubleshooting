@@ -63,4 +63,7 @@
 * Solution: `kubectl delete jobs -n monitoring "kubectl get jobs -n monitoring -o custom-columns=:.metadata.name" `
 * reference: https://stackoverflow.com/questions/43675231/kubernetes-delete-all-jobs-in-bulk
 
-
+## EKS Timout Error from Ec2 instance 
+* error: ouldn't get current server API group list: Get eks.amazonaws.com/api?timeout=32s": dial tcp 10.122.65.248:443: i/o timeout
+* solution: Try to debug the error using command `kubectl get nodes -v=10`
+* reference : https://stackoverflow.com/questions/76841889/kubectl-error-memcache-go265-couldn-t-get-current-server-api-group-list-get
