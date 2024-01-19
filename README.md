@@ -1,4 +1,4 @@
-#  🛟 AWS EKS Troubleshooting 🛟
+#  ✴️ AWS EKS Troubleshooting ✴️
 ## EKS 1.22 upgrade dashboard  error 
 *  ❌ **Error**:```ingresses:Unknown error (404) the server could not find the requested resource (get ingresses.extensions)```
 *  🎯 **Solution** : `kubectl edit -n kubernetes-dashboard deployment kubernetes-dashboard`
