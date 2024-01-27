@@ -68,7 +68,7 @@
 * **solution**: Try to debug the error using command `kubectl get nodes -v=10`
 * **reference** : https://stackoverflow.com/questions/76841889/kubectl-error-memcache-go265-couldn-t-get-current-server-api-group-list-get
 
-## EKS Timeout Error from Ec2 instance 
+## EKS upgrade NewRelic issue
 * 🤔 **Try**: After upgrading EKS version from 1.22 to 1.23 we try to sync terrafrom with newer version
 * ❌ **error**: ValidationError(CatalogSource.spec): unknown field "grpcPodConfig" in com.coreos.operators.v1alpha1.CatalogSource .spec". After updating the CRDs for OLM
 * 🎯 **solution**: 
@@ -91,3 +91,11 @@
      kubectl get customresourcedefinitions.apiextensions.k8s.io subscriptions.operators.coreos.com -o yaml | tfk8s --strip -o sample8.tf
     ```
 * 🙌🏼 **reference** : https://github.com/operator-framework/operator-lifecycle-manager/issues/2695
+## EKS kubectl command for namespace all resources
+* 🤔 **Try**: Try to get all resources on the single namespace
+* ❌ **error**: command 
+* 🎯 **solution**: 
+    ```
+     kubectl get all -n=namespaceName
+    ```
+* 🙌🏼 **reference** :[ https://github.com/operator-framework/operator-lifecycle-manager/issues/2695](https://stackoverflow.com/questions/57002814/list-all-objects-from-a-given-namespace-using-kubectl)https://stackoverflow.com/questions/57002814/list-all-objects-from-a-given-namespace-using-kubectl
